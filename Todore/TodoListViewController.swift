@@ -12,8 +12,15 @@ class TodoListViewController: UITableViewController {
 
     var itemArray = ["Find Mike","Buy eggs","Destry Demogorgon","Find stuff"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // if condtition makes sure defaults array exists
+        if let items = defaults.array(forKey: "toDoListArray") as? [String] {
+            itemArray  = items
+        }
         
     }
 
@@ -72,6 +79,9 @@ class TodoListViewController: UITableViewController {
             //what will happend once the user clicks the add item button on our UI ALERT
             // TODO: check if entry is not empty
             self.itemArray.append(newItemEntered.text!)
+            
+            self.defaults.set(self.itemArray, forKey: "toDoListArray")
+            
             self.tableView.reloadData()
         }
         alert.addTextField {
@@ -82,6 +92,13 @@ class TodoListViewController: UITableViewController {
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            itemArray.remove(at: indexPath.row)
+        }
+        tableView.reloadData()
     }
     
     
