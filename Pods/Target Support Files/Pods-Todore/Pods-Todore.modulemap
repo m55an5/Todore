@@ -1,0 +1,6 @@
+framework module Pods_Todore {
+  umbrella header "Pods-Todore-umbrella.h"
+
+  export *
+  module * { export * }
+}

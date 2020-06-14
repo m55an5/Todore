@@ -15,9 +15,11 @@
 		0155C94B24487AF200DDDCC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0155C94924487AF200DDDCC1 /* LaunchScreen.storyboard */; };
 		01BF54162458ED5900CDEACD /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01BF54142458ED5900CDEACD /* DataModel.xcdatamodeld */; };
 		01BF545B2459B4DC00CDEACD /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BF545A2459B4DC00CDEACD /* CategoryViewController.swift */; };
+		BC92017F952B49B40DFF2E1A /* Pods_Todore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD78A707ACAB1DED09D0F60 /* Pods_Todore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00B27E4B6A47D46A7865D4AF /* Pods-Todore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todore.debug.xcconfig"; path = "Target Support Files/Pods-Todore/Pods-Todore.debug.xcconfig"; sourceTree = "<group>"; };
 		0155C93B24487AEF00DDDCC1 /* Todore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0155C93E24487AEF00DDDCC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0155C94024487AEF00DDDCC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		0155C94C24487AF200DDDCC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01BF54152458ED5900CDEACD /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		01BF545A2459B4DC00CDEACD /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = Todore/Views/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		50FB683848827F4EFC2B5146 /* Pods-Todore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todore.release.xcconfig"; path = "Target Support Files/Pods-Todore/Pods-Todore.release.xcconfig"; sourceTree = "<group>"; };
+		5BD78A707ACAB1DED09D0F60 /* Pods_Todore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC92017F952B49B40DFF2E1A /* Pods_Todore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				0155C93D24487AEF00DDDCC1 /* Todore */,
 				0155C93C24487AEF00DDDCC1 /* Products */,
+				B4A7AE38F42C4044F0AC4E3B /* Pods */,
+				60FDCA9FBC44735FE0252409 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,24 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		60FDCA9FBC44735FE0252409 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BD78A707ACAB1DED09D0F60 /* Pods_Todore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4A7AE38F42C4044F0AC4E3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00B27E4B6A47D46A7865D4AF /* Pods-Todore.debug.xcconfig */,
+				50FB683848827F4EFC2B5146 /* Pods-Todore.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0155C94F24487AF200DDDCC1 /* Build configuration list for PBXNativeTarget "Todore" */;
 			buildPhases = (
+				571EBBEA360B895FC633F04F /* [CP] Check Pods Manifest.lock */,
 				0155C93724487AEF00DDDCC1 /* Sources */,
 				0155C93824487AEF00DDDCC1 /* Frameworks */,
 				0155C93924487AEF00DDDCC1 /* Resources */,
+				BE45C2C9F7BC6713854EA89E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +197,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		571EBBEA360B895FC633F04F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Todore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE45C2C9F7BC6713854EA89E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todore/Pods-Todore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todore/Pods-Todore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Todore/Pods-Todore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0155C93724487AEF00DDDCC1 /* Sources */ = {
@@ -322,6 +391,7 @@
 		};
 		0155C95024487AF200DDDCC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00B27E4B6A47D46A7865D4AF /* Pods-Todore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +410,7 @@
 		};
 		0155C95124487AF200DDDCC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50FB683848827F4EFC2B5146 /* Pods-Todore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
