@@ -16,6 +16,7 @@
 		0155C94824487AF200DDDCC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0155C94724487AF200DDDCC1 /* Assets.xcassets */; };
 		0155C94B24487AF200DDDCC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0155C94924487AF200DDDCC1 /* LaunchScreen.storyboard */; };
 		01BF545B2459B4DC00CDEACD /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BF545A2459B4DC00CDEACD /* CategoryViewController.swift */; };
+		01C541E6249B8C5E001F1EC4 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C541E5249B8C5E001F1EC4 /* SwipeTableViewController.swift */; };
 		BC92017F952B49B40DFF2E1A /* Pods_Todore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD78A707ACAB1DED09D0F60 /* Pods_Todore.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		0155C94A24487AF200DDDCC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0155C94C24487AF200DDDCC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01BF545A2459B4DC00CDEACD /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = Todore/Views/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		01C541E5249B8C5E001F1EC4 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		50FB683848827F4EFC2B5146 /* Pods-Todore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todore.release.xcconfig"; path = "Target Support Files/Pods-Todore/Pods-Todore.release.xcconfig"; sourceTree = "<group>"; };
 		5BD78A707ACAB1DED09D0F60 /* Pods_Todore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 			children = (
 				01BF545A2459B4DC00CDEACD /* CategoryViewController.swift */,
 				0155C94224487AEF00DDDCC1 /* TodoListViewController.swift */,
+				01C541E5249B8C5E001F1EC4 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				01BF545B2459B4DC00CDEACD /* CategoryViewController.swift in Sources */,
 				0155C94324487AEF00DDDCC1 /* TodoListViewController.swift in Sources */,
 				0155C93F24487AEF00DDDCC1 /* AppDelegate.swift in Sources */,
+				01C541E6249B8C5E001F1EC4 /* SwipeTableViewController.swift in Sources */,
 				01487686249644EC006B3644 /* Item.swift in Sources */,
 				0155C94124487AEF00DDDCC1 /* SceneDelegate.swift in Sources */,
 				01487688249644F4006B3644 /* Category.swift in Sources */,

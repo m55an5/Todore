@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
@@ -21,6 +21,7 @@ class CategoryViewController: UITableViewController {
         super.viewDidLoad()
 
         loadCategories()
+        
     }
 
     //MARK: - TABLE VIEW Datasouce Methods
@@ -32,8 +33,8 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+                
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         let category = categories?[indexPath.row].name ?? "No Categories added yet"
         
@@ -44,13 +45,6 @@ class CategoryViewController: UITableViewController {
     }
     
     //MARK: - TABLE VIEW Delegate Methods
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-//            context.delete(categories[indexPath.row])
-//            categories.remove(at: indexPath.row)
-//            saveCategories()
-        }
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
@@ -82,6 +76,22 @@ class CategoryViewController: UITableViewController {
         
         categories = realm.objects(Category.self)
         tableView.reloadData()
+    }
+    
+    //MARK: - Delete data from Swipe
+    
+    override func updateModel(at indexPath: IndexPath) {
+       //  handle action by updating model with deletion
+        if let category = self.categories?[indexPath.row]{
+            do {
+                try self.realm.write { // updates the database
+                    self.realm.delete(category) // updates with this change i.e. delete in this case
+                }
+            } catch {
+                print("Error deleting category, \(error)")
+            }
+        }
+                    
     }
     
     //MARK: - ADD New Categories

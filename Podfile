@@ -7,5 +7,6 @@ target 'Todore' do
   # Pods for Todore
 
 pod 'RealmSwift'
+pod 'SwipeCellKit'
 
 end

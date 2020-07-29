@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeTableViewController {
 
     let realm = try! Realm()
     
@@ -27,7 +27,6 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print(dataFilePath)
-  
     }
 
 
@@ -40,7 +39,7 @@ class TodoListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = todoItems?[indexPath.row] {
                 
@@ -116,7 +115,7 @@ class TodoListViewController: UITableViewController {
     }
     
     //MARK: - delete item in row
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let item = todoItems?[indexPath.row]{
                 do {
@@ -129,6 +128,22 @@ class TodoListViewController: UITableViewController {
             }
         }
         tableView.reloadData()
+    }*/
+    
+    //MARK: - Delete data from Swipe
+    
+    override func updateModel(at indexPath: IndexPath) {
+       //  handle action by updating model with deletion
+        if let item = self.todoItems?[indexPath.row]{
+            do {
+                try self.realm.write { // updates the database
+                    self.realm.delete(item) // updates with this change i.e. delete in this case
+                }
+            } catch {
+                print("Error deleting items, \(error)")
+            }
+        }
+                    
     }
     
     func save(item: Item) {
