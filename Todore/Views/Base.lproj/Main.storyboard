@@ -9,7 +9,7 @@
         <!--Todore-->
         <scene sceneID="NjO-dO-gRn">
             <objects>
-                <tableViewController id="CeT-Vv-x5j" customClass="CategoryViewController" customModule="Todore" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CeT-Vv-x5j" customClass="CategoryViewController" customModule="Todore" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="U1o-Fm-OkI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,12 +31,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Todore" id="SOh-5P-ttt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wlE-na-qeN">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="CeT-Vv-x5j" id="OIU-T2-hxh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="mj9-1u-IUM" kind="show" identifier="goToItems" id="qGx-CF-NjP"/>
                     </connections>
@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="1878" y="100"/>
         </scene>
-        <!--Items-->
+        <!--items-->
         <scene sceneID="Z6V-3l-o2D">
             <objects>
                 <tableViewController id="mj9-1u-IUM" customClass="TodoListViewController" customModule="Todore" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,14 +76,16 @@
                             <outlet property="delegate" destination="mj9-1u-IUM" id="c8P-EB-b3S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Items" id="s2i-xg-zRL">
+                    <navigationItem key="navigationItem" title="items" id="s2i-xg-zRL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ky7-il-VT7">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="mj9-1u-IUM" id="C3n-ei-OMX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="iUw-0H-h2y" id="xoS-C2-JDp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6N9-v0-eZv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,15 +99,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xFy-r1-t5d">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H3i-Me-sZy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="CeT-Vv-x5j" kind="relationship" relationship="rootViewController" id="tzm-LJ-Lrc"/>
                     </connections>
